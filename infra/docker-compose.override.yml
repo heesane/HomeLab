@@ -1,0 +1,25 @@
+services:
+  # Local Development Overrides
+  # Expose all ports for easier debugging on localhost
+  
+  postgres:
+    ports:
+      - "5432:5432"
+
+  redis:
+    ports:
+      - "6379:6379"
+
+  mongo:
+    ports:
+      - "27017:27017"
+
+  minio:
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+  rabbitmq:
+    ports:
+      - "5672:5672"
+      - "15672:15672"

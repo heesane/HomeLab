@@ -1,0 +1,55 @@
+services:
+  # 1. PostgreSQL 15 (DBMS Service)
+  postgres:
+    image: postgres:15-alpine
+    container_name: homelab-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+
+  # 2. Redis (Caching Service)
+  redis:
+    image: redis:alpine
+    container_name: homelab-redis
+    command: redis-server --save 60 1 --loglevel warning --requirepass ${REDIS_PASSWORD:-password}
+    volumes:
+      - ./data/redis:/data
+
+  # 3. MongoDB (Document Service)
+  mongo:
+    image: mongo:latest
+    container_name: homelab-mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - ./data/mongo:/data/db
+
+  # 4. MinIO (Image/Video Service Storage)
+  minio:
+    image: quay.io/minio/minio
+    container_name: homelab-minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    volumes:
+      - ./data/minio:/data
+
+  # 5. RabbitMQ (Message Queue)
+  rabbitmq:
+    image: rabbitmq:management-alpine
+    container_name: homelab-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+    volumes:
+      - ./data/rabbitmq:/var/lib/rabbitmq
+
+networks:
+  default:
+    name: homelab-network
+    driver: bridge

@@ -1,0 +1,26 @@
+services:
+  # Production Overrides
+  # Restrict ports and ensure high availability
+  
+  postgres:
+    restart: always
+    # Ports are NOT exposed to host in production for security, access only via internal network
+    # or expose only if strictly necessary for external tools via VPN
+
+  redis:
+    restart: always
+
+  mongo:
+    restart: always
+
+  minio:
+    restart: always
+    ports:
+      - "9000:9000" # API might be needed for external access or via Nginx Proxy
+      - "9001:9001" 
+
+  rabbitmq:
+    restart: always
+    ports:
+       - "5672:5672"
+       # Management UI (15672) can be hidden behind reverse proxy
