@@ -1,10 +1,33 @@
-# 🗄 RDBMS Service
+# Nexus Base
+### Robust Relational Data Workspace
 
-관계형 데이터베이스(RDBMS) 구성을 위한 공간입니다.
+**[🇺🇸 English](./README.md)** | [🇰🇷 한국어](./README_ko.md)
 
-## 계획 중인 서비스
-- [ ] **PostgreSQL:** 정형 데이터 저장 및 관리를 위한 메인 RDBMS.
+![Nexus Base Badge](https://img.shields.io/badge/Service-Nexus%20Base-blue?style=for-the-badge) ![Build Status](https://img.shields.io/badge/Build-Passing-success?style=for-the-badge)
 
-## 데이터 관리 주의사항
-- 모든 데이터베이스는 `./data`와 같은 볼륨을 호스트 경로에 연결하여 데이터 지속성을 유지해야 합니다.
-- 민감한 패스워드는 `docker-compose.yml`에 직접 노출하지 않도록 주의하세요.
+**Nexus Base** offers a managed, enterprise-grade relational database experience built on **PostgreSQL 15**. It provides isolated workspaces for different applications, ensuring data integrity, complex querying capabilities, and full ACID compliance.
+
+## 🏛 System Architecture
+
+```mermaid
+flowchart LR
+    Client[Service/User] -->|TCP Connection| Proxy[Port Forwarding/Proxy]
+    Proxy -->|Authenticate| PG[PostgreSQL 15]
+    
+    PG -->|Table Space A| DB1[(Workspace A)]
+    PG -->|Table Space B| DB2[(Workspace B)]
+    
+    Backup[Backup Service] -.->|Periodic Dump| MinIO[S3 Archive]
+```
+
+## 🛠 Technology Stack
+
+| Technology | Role | Justification |
+| :--- | :--- | :--- |
+| **PostgreSQL 15** | RDBMS | The world's most advanced open-source database, chosen for its reliability and JSONB support. |
+| **PgBouncer** | Connection Pooling | (Planned) Efficiently manages connections to prevent database saturation. |
+| **Docker Volumes** | Persistence | Ensures data survives container restarts and upgrades. |
+
+## 🔮 Future Roadmap
+- **High Availability (HA)**: Implementing Patroni for automated failover.
+- **DBaaS API**: An automation layer to create databases and users dynamically via REST API.

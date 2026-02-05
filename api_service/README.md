@@ -1,16 +1,35 @@
-# 🚀 API Services
+# Nexus Gate
+### The Unified Interface for Your Digital World
 
-사이드 프로젝트 및 유틸리티 백엔드 서비스들이 위치하는 영역입니다.
+**[🇺🇸 English](./README.md)** | [🇰🇷 한국어](./README_ko.md)
 
-## 포함된 서비스
+![Nexus Gate Badge](https://img.shields.io/badge/Service-Nexus%20Gate-orange?style=for-the-badge) ![Build Status](https://img.shields.io/badge/Build-Planned-orange?style=for-the-badge)
 
-### [Simple Spring Boot App](./simple-spring-boot)
-- **컴파일/런타임:** Java 17 (Eclipse Temurin)
-- **포트:** 8000
-- **배포 방식:** Docker Multi-stage Build
-- **설명:** 기본 헬로월드 수준의 테스트용 API 서버입니다.
+**Nexus Gate** is the central nervous system of the Nexus Ecosystem. It serves as the API Gateway and Orchestrator, routing requests, handling authentication/authorization, and aggregating responses from all microservices into a coherent experience.
 
-## 새로운 API 추가 방법
-1. 이 디렉토리 하위에 프로젝트명 폴더를 생성합니다.
-2. `Dockerfile`과 `docker-compose.yml`을 작성합니다.
-3. `docker-compose.yml`에서 `home-lab-proxy` 네트워크를 연결하여 NPM에서 접근 가능하게 설정합니다.
+## 🔗 System Architecture
+
+```mermaid
+flowchart TD
+    Client[External Client] -->|HTTPS| Gate{Nexus Gate}
+    
+    Gate -->|Auth Check| IDP[Identity Provider]
+    
+    Gate -->|/api/image| Pixel[Nexus Pixel]
+    Gate -->|/api/video| Stream[Nexus Stream]
+    Gate -->|/api/data| Base[Nexus Base]
+    
+    Gate -->|Rate Limiting| Redis[Nexus Cache]
+```
+
+## 🛠 Technology Stack
+
+| Technology | Role | Justification |
+| :--- | :--- | :--- |
+| **Spring Cloud Gateway** | API Gateway | Built on Spring WebFlux, it handles high concurrency and provides dynamic routing. |
+| **JWT (JSON Web Token)** | Security | Stateless authentication mechanism for seamless inter-service communication. |
+| **Resilience4j** | Circuit Breaker | Prevents cascading failures when a downstream service is struggling. |
+
+## 🔮 Future Roadmap
+- **GraphQL Federation**: Unifying all data sources into a single graph API.
+- **Service Mesh**: Transitioning to Istio or Linkerd for transparent mTLS and observability in Kubernetes.

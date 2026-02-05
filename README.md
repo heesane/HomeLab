@@ -1,60 +1,40 @@
-# 🏠 HomeLab Project
+# Nexus Ecosystem
+### The Central Nervous System for Your Digital Life
 
-개인 인프라 구축 및 사이드 프로젝트 운영을 위한 홈서버 관리 저장소입니다.  
-Docker 기반의 마이크로서비스 아키텍처를 지향하며, 자동화된 HTTPS 관리와 서비스별 계층화된 구조를 제공합니다.
+**[🇺🇸 English](./README.md)** | [🇰🇷 한국어](./README_ko.md)
 
----
+> **"Connectivity, Performance, and Scalability in One Unified Platform."**
 
-## 🏗 아키텍처 및 서비스 구성
+The **Nexus Ecosystem** is a high-performance, modular Home Lab server environment designed to handle everything from heavy media streaming to real-time data caching. Built on a foundation of **Next.js**, **Spring Boot**, and **Docker**, it represents the pinnacle of modern full-stack engineering—engineered not just to work, but to perform.
 
-전체 시스템은 다음과 같은 논리적 계층으로 관리됩니다.
+## 🌌 Ecosystem Services
 
-### 1. [Infrastructure Layer](./infra)
-- **Nginx Proxy Manager (NPM):** 모든 외부 트래픽의 관문(Gateway) 역할을 하며, Let's Encrypt를 통한 SSL/HTTPS 자동 발급 및 갱신을 담당합니다.
-
-### 2. [API Service Layer](./api_service)
-- **Spring Boot API:** 사이드 프로젝트 및 유틸리티를 위한 백엔드 서비스입니다.
-- Docker 멀티 스테이지 빌드를 통해 가볍고 이식성 있는 배포 방식을 채택하고 있습니다.
-
-### 3. [Data Store Layer]
-- **[RDBMS](./rdbms_service):** 관계형 데이터베이스 (PostgreSQL 등)
-- **[NoSQL](./nosql_service):** 비정형 데이터베이스 (MongoDB 등)
-- **[Caching](./caching_service):** 고속 데이터 처리를 위한 캐시 서버 (Redis 등)
+| Service Name | Brand Identity | Description | Status |
+| :--- | :--- | :--- | :--- |
+| [**Image Service**](./image_service/README.md) | `Nexus Pixel` | High-performance image processing, resizing, and optimization engine backed by S3-compatible storage. | ![Status](https://img.shields.io/badge/Status-Active-success) |
+| [**Video Service**](./video_service/README.md) | `Nexus Stream` | Adaptive bitrate streaming platform supporting HLS/DASH and real-time transcoding. | ![Status](https://img.shields.io/badge/Status-Active-success) |
+| [**Caching Service**](./caching_service/README.md) | `Nexus Cache` | Ultra-low latency in-memory data grid powered by isolated Redis containers. | ![Status](https://img.shields.io/badge/Status-Stable-blue) |
+| [**RDBMS Service**](./rdbms_service/README.md) | `Nexus Base` | Enterprise-grade relational workspace providing isolated PostgreSQL environments. | ![Status](https://img.shields.io/badge/Status-Stable-blue) |
+| [**Document Service**](./nosql_service/README.md) | `Nexus Store` | Flexible, schema-less document storage solution using MongoDB for unstructured data. | ![Status](https://img.shields.io/badge/Status-Stable-blue) |
+| [**API Service**](./api_service/README.md) | `Nexus Gate` | The central gateway and business logic orchestrator for the entire Nexus ecosystem. | ![Status](https://img.shields.io/badge/Status-Planned-orange) |
 
 ---
 
-## 📁 디렉토리 구조
+## 🛠 Technology Stack
 
-```text
-.
-├── infra/               # 인프라 핵심 및 프록시 설정
-├── api_service/         # 백엔드 API 서비스
-├── rdbms_service/       # 관계형 DB (PostgreSQL 등)
-├── nosql_service/       # 비관계형 DB (MongoDB 등)
-├── caching_service/     # 캐시 서버 (Redis 등)
-└── .gitignore           # 민감 정보 및 불필요 파일 보호
-```
+### Core Frameworks
+- **Frontend**: [Next.js 14](https://nextjs.org/) (App Router, Server Components)
+- **Backend**: [Spring Boot 3.3](https://spring.io/projects/spring-boot) (Java 21, WebFlux/MVC)
 
----
+### Infrastructure & DevOps
+- **Containerization**: Docker & Docker Compose
+- **Object Storage**: MinIO (S3 Compatible)
+- **Database**: PostgreSQL 15, MongoDB 6.0, Redis 7.0
+- **Message Queue**: RabbitMQ (Event-Driven Architecture)
 
-## 🚀 시작하기
+## 🚀 Architecture Overview
 
-### 공통 네트워크 설정 (Shared Proxy Network)
-컨테이너 간 내부 통신을 위해 공용 도커 네트워크가 필요합니다.
-```bash
-docker network create home-lab-proxy
-```
-
-### 각 서비스 실행
-각 프로젝트 폴더로 이동하여 도커 컴포즈를 실행합니다.
-```bash
-docker compose up -d
-```
+The Nexus Ecosystem adopts a **Modular Monolith** architecture, allowing for independent service evolution while maintaining a cohesive operational structure. In the future, this system is designed to seamlessly transition into a full-scale **Kubernetes (K8s) Cluster**, leveraging **Terraform** for Infrastructure as Code (IaC) to deploy onto major cloud providers (AWS, GCP, Azure).
 
 ---
-
-## 🛠 하드웨어 사양 (Target Server)
-- **CPU:** AMD Ryzen 5 5600X (6-Core / 12-Threads)
-- **Memory:** 32GB RAM
-- **GPU:** NVIDIA GeForce RTX 2060
-- **Storage:** 900GB SSD
+© 2026 Nexus Ecosystem. Engineered with passion.
