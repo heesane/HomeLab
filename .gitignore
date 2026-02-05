@@ -2,18 +2,29 @@
 **/data/
 **/letsencrypt/
 
-# Build artifacts
+# Configuration & Secrets (CRITICAL)
+.env
+.env.*.local
+*.pem
+*.key
+*.p12
+*.jks
+
+# Build artifacts & Dependencies
 **/target/
+**/build/
+**/dist/
+**/node_modules/
+**/.next/
+**/.gradle/
 **/*.class
 **/*.jar
 **/*.war
 
-# IDE settings
+# OS & IDE
+.DS_Store
+Thumbs.db
 .idea/
 .vscode/
 *.swp
 *.swo
-
-# OS files
-.DS_Store
-Thumbs.db
