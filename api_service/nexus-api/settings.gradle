@@ -1,0 +1,10 @@
+rootProject.name = 'nexus-api'
+
+include 'nexus-core'
+include 'nexus-domain'
+include 'nexus-auth'
+include 'nexus-image'
+include 'nexus-video'
+include 'nexus-caching'
+include 'nexus-document'
+include 'nexus-rdbms'

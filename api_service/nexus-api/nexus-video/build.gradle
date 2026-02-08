@@ -1,0 +1,12 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+description = 'Video Streaming and Transcoding Service for Nexus API'
+
+dependencies {
+    implementation project(':nexus-core')
+    implementation project(':nexus-domain')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}

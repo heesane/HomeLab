@@ -1,0 +1,23 @@
+plugins {
+    id 'java-library'
+}
+
+description = 'Shared domain models, entities, and DTOs for Nexus API'
+
+dependencies {
+    // Core Module
+    api project(':nexus-core')
+
+    // Spring Data JPA for entity annotations
+    api 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Validation
+    api 'org.springframework.boot:spring-boot-starter-validation'
+
+    // MapStruct for DTO mapping
+    api 'org.mapstruct:mapstruct:1.5.5.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
+    // H2 for compile (actual DB configured in services)
+    runtimeOnly 'com.h2database:h2'
+}

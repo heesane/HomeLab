@@ -1,0 +1,14 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+description = 'RDBMS Service for Nexus API - Enterprise-grade relational workspace'
+
+dependencies {
+    implementation project(':nexus-core')
+    implementation project(':nexus-domain')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'org.postgresql:postgresql'
+}

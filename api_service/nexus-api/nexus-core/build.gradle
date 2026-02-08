@@ -1,0 +1,23 @@
+plugins {
+    id 'java-library'
+}
+
+description = 'Core utilities, exceptions, and common configurations for Nexus API'
+
+dependencies {
+    // Spring Web for ResponseEntity, etc.
+    api 'org.springframework:spring-web'
+
+    // Spring Context for configuration
+    api 'org.springframework:spring-context'
+
+    // Jackson for JSON
+    api 'com.fasterxml.jackson.core:jackson-databind'
+    api 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
+    // Validation
+    api 'jakarta.validation:jakarta.validation-api'
+
+    // Security (for shared filters)
+    api 'org.springframework.boot:spring-boot-starter-security'
+}

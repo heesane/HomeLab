@@ -1,0 +1,82 @@
+services:
+  nexus-auth:
+    build:
+      context: .
+      dockerfile: nexus-auth/Dockerfile
+    image: nexus-auth:latest
+    container_name: nexus-auth
+    env_file:
+      - .env.auth
+    ports:
+      - "8081:8081"
+    networks:
+      - nexus-network
+
+  nexus-image:
+    build:
+      context: .
+      dockerfile: nexus-image/Dockerfile
+    image: nexus-image:latest
+    container_name: nexus-image
+    env_file:
+      - .env.image
+    ports:
+      - "8082:8082"
+    networks:
+      - nexus-network
+
+  nexus-video:
+    build:
+      context: .
+      dockerfile: nexus-video/Dockerfile
+    image: nexus-video:latest
+    container_name: nexus-video
+    env_file:
+      - .env.video
+    ports:
+      - "8083:8083"
+    networks:
+      - nexus-network
+
+  nexus-caching:
+    build:
+      context: .
+      dockerfile: nexus-caching/Dockerfile
+    image: nexus-caching:latest
+    container_name: nexus-caching
+    env_file:
+      - .env.caching
+    ports:
+      - "8084:8084"
+    networks:
+      - nexus-network
+
+  nexus-document:
+    build:
+      context: .
+      dockerfile: nexus-document/Dockerfile
+    image: nexus-document:latest
+    container_name: nexus-document
+    env_file:
+      - .env.document
+    ports:
+      - "8085:8085"
+    networks:
+      - nexus-network
+
+  nexus-rdbms:
+    build:
+      context: .
+      dockerfile: nexus-rdbms/Dockerfile
+    image: nexus-rdbms:latest
+    container_name: nexus-rdbms
+    env_file:
+      - .env.rdbms
+    ports:
+      - "8086:8086"
+    networks:
+      - nexus-network
+
+networks:
+  nexus-network:
+    driver: bridge

@@ -1,0 +1,13 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+description = 'Caching Service for Nexus API - Ultra-low latency in-memory data grid'
+
+dependencies {
+    implementation project(':nexus-core')
+    implementation project(':nexus-domain')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+}

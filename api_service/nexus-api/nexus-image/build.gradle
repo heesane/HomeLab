@@ -1,0 +1,19 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+description = 'Image Processing Service for Nexus API - High-performance image resizing and optimization'
+
+dependencies {
+    implementation project(':nexus-core')
+    implementation project(':nexus-domain')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // AWS S3 SDK
+    implementation platform('software.amazon.awssdk:bom:2.25.0')
+    implementation 'software.amazon.awssdk:s3'
+
+    // Image Processing
+    implementation 'net.coobird:thumbnailator:0.4.20'
+}

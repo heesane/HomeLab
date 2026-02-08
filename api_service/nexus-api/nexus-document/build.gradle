@@ -1,0 +1,13 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+description = 'Document Storage Service for Nexus API - Flexible schema-less document storage'
+
+dependencies {
+    implementation project(':nexus-core')
+    implementation project(':nexus-domain')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+}
