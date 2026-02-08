@@ -11,11 +11,11 @@ The **Nexus Ecosystem** is a high-performance, modular Home Lab server environme
 
 | Service Name | Brand Identity | Description | Status |
 | :--- | :--- | :--- | :--- |
-| [**Image Service**](./image_service/README.md) | `Nexus Pixel` | High-performance image processing, resizing, and optimization engine backed by S3-compatible storage. | ![Status](https://img.shields.io/badge/Status-Active-success) |
-| [**Video Service**](./video_service/README.md) | `Nexus Stream` | Adaptive bitrate streaming platform supporting HLS/DASH and real-time transcoding. | ![Status](https://img.shields.io/badge/Status-Active-success) |
-| [**Caching Service**](./caching_service/README.md) | `Nexus Cache` | Ultra-low latency in-memory data grid powered by isolated Redis containers. | ![Status](https://img.shields.io/badge/Status-Stable-blue) |
-| [**RDBMS Service**](./rdbms_service/README.md) | `Nexus Base` | Enterprise-grade relational workspace providing isolated PostgreSQL environments. | ![Status](https://img.shields.io/badge/Status-Stable-blue) |
-| [**Document Service**](./nosql_service/README.md) | `Nexus Store` | Flexible, schema-less document storage solution using MongoDB for unstructured data. | ![Status](https://img.shields.io/badge/Status-Stable-blue) |
+| [**Image Service**](./image_service/README.md) | `Nexus Pixel` | High-performance image processing, resizing, and optimization engine backed by S3-compatible storage. | ![Status](https://img.shields.io/badge/Status-In_Progress-success) |
+| [**Video Service**](./video_service/README.md) | `Nexus Stream` | Adaptive bitrate streaming platform supporting HLS/DASH and real-time transcoding. | ![Status](https://img.shields.io/badge/Status-Planned-orange) |
+| [**Caching Service**](./caching_service/README.md) | `Nexus Cache` | Ultra-low latency in-memory data grid powered by isolated Redis containers. | ![Status](https://img.shields.io/badge/Status-Planned-orange) |
+| [**RDBMS Service**](./rdbms_service/README.md) | `Nexus Base` | Enterprise-grade relational workspace providing isolated PostgreSQL environments. | ![Status](https://img.shields.io/badge/Status-Planned-orange) |
+| [**Document Service**](./nosql_service/README.md) | `Nexus Store` | Flexible, schema-less document storage solution using MongoDB for unstructured data. | ![Status](https://img.shields.io/badge/Status-Planned-orange) |
 | [**API Service**](./api_service/README.md) | `Nexus Gate` | The central gateway and business logic orchestrator for the entire Nexus ecosystem. | ![Status](https://img.shields.io/badge/Status-Planned-orange) |
 
 ---

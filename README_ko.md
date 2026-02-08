@@ -11,11 +11,11 @@
 
 | 서비스 명칭 | 브랜드 ID | 설명 | 상태 |
 | :--- | :--- | :--- | :--- |
-| [**이미지 서비스**](./image_service/README_ko.md) | `Nexus Pixel` | S3 호환 스토리지를 기반으로 하는 고성능 이미지 처리, 리사이징 및 최적화 엔진입니다. | ![Status](https://img.shields.io/badge/Status-Active-success) |
-| [**동영상 서비스**](./video_service/README_ko.md) | `Nexus Stream` | HLS/DASH 및 실시간 트랜스코딩을 지원하는 적응형 비트레이트(ABR) 스트리밍 플랫폼입니다. | ![Status](https://img.shields.io/badge/Status-Active-success) |
-| [**캐싱 서비스**](./caching_service/README_ko.md) | `Nexus Cache` | 격리된 Redis 컨테이너로 구동되는 초저지연 인메모리 데이터 그리드입니다. | ![Status](https://img.shields.io/badge/Status-Stable-blue) |
-| [**RDBMS 서비스**](./rdbms_service/README_ko.md) | `Nexus Base` | 격리된 PostgreSQL 환경을 제공하는 엔터프라이즈급 관계형 데이터 워크스페이스입니다. | ![Status](https://img.shields.io/badge/Status-Stable-blue) |
-| [**Document 서비스**](./nosql_service/README_ko.md) | `Nexus Store` | 비정형 데이터를 위한 MongoDB 기반의 유연한 스키마리스(Schema-less) 문서 저장소입니다. | ![Status](https://img.shields.io/badge/Status-Stable-blue) |
+| [**이미지 서비스**](./image_service/README_ko.md) | `Nexus Pixel` | S3 호환 스토리지를 기반으로 하는 고성능 이미지 처리, 리사이징 및 최적화 엔진입니다. | ![Status](https://img.shields.io/badge/Status-In_Progress-success) |
+| [**동영상 서비스**](./video_service/README_ko.md) | `Nexus Stream` | HLS/DASH 및 실시간 트랜스코딩을 지원하는 적응형 비트레이트(ABR) 스트리밍 플랫폼입니다. | ![Status](https://img.shields.io/badge/Status-Planned-orange) |
+| [**캐싱 서비스**](./caching_service/README_ko.md) | `Nexus Cache` | 격리된 Redis 컨테이너로 구동되는 초저지연 인메모리 데이터 그리드입니다. | ![Status](https://img.shields.io/badge/Status-Planned-orange) |
+| [**RDBMS 서비스**](./rdbms_service/README_ko.md) | `Nexus Base` | 격리된 PostgreSQL 환경을 제공하는 엔터프라이즈급 관계형 데이터 워크스페이스입니다. | ![Status](https://img.shields.io/badge/Status-Planned-orange) |
+| [**Document 서비스**](./nosql_service/README_ko.md) | `Nexus Store` | 비정형 데이터를 위한 MongoDB 기반의 유연한 스키마리스(Schema-less) 문서 저장소입니다. | ![Status](https://img.shields.io/badge/Status-Planned-orange) |
 | [**API 서비스**](./api_service/README_ko.md) | `Nexus Gate` | 전체 Nexus 생태계를 위한 중앙 게이트웨이이자 비즈니스 로직 오케스트레이터입니다. | ![Status](https://img.shields.io/badge/Status-Planned-orange) |
 
 ---
